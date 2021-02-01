@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.NavMenu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    flex-flow: column;
+    padding: 0;
+    transition: 0.5s;
+    transform: translateX(100%);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    nav {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        a {
+            font-size: 20px;
+            padding: 20px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+    }
+    .menuBtn {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(180deg, #fc0102 0%, #ffc400 100%);
+        border-radius: 50%;
+        position: absolute;
+        padding: 0;
+        top: 20px;
+        left: -35px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        transition: 0.8s;
+        -webkit-transition: 0.8s;
+        -moz-transition: 0.8s;
+        -ms-transition: 0.8s;
+        -o-transition: 0.8s;
+        span {
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+            left: 50%;
+            margin-left: -8px;
+            width: 16px;
+            height: 2px;
+            background-color: #ffffff;
+            &::before {
+                position: absolute;
+                top: 50%;
+                margin-top: -1px;
+                left: 50%;
+                margin-left: -8px;
+                width: 16px;
+                height: 2px;
+                background-color: #ffffff;
+                content: "";
+                transform: translateY(-5px);
+                -webkit-transform: translateY(-5px);
+                -moz-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                -o-transform: translateY(-5px);
+            }
+            &::after {
+                position: absolute;
+                top: 50%;
+                margin-top: -1px;
+                left: 50%;
+                margin-left: -8px;
+                width: 16px;
+                height: 2px;
+                background-color: #ffffff;
+                content: "";
+                transform: translateY(5px);
+                -webkit-transform: translateY(5px);
+                -moz-transform: translateY(5px);
+                -ms-transform: translateY(5px);
+                -o-transform: translateY(5px);
+            }
+        }
+    }
+}
+.NavMenu {
+    span.open {
+        &::before {
+            width: 10px;
+            transform: rotate(35deg);
+            transform-origin: left bottom;
+            -webkit-transform: rotate(35deg);
+            -moz-transform: rotate(35deg);
+            -ms-transform: rotate(35deg);
+            -o-transform: rotate(35deg);
+        }
+        &::after {
+            width: 10px;
+            transform: rotate(-35deg);
+            transform-origin: left top;
+            -webkit-transform: rotate(-35deg);
+            -moz-transform: rotate(-35deg);
+            -ms-transform: rotate(-35deg);
+            -o-transform: rotate(-35deg);
+        }
+    }
+}
+.NavMenu.active {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+
+    .menuBtn {
+        padding: 0;
+        top: 0px;
+        left: 2px;
+    }
+}
+.NavMenu.inactive {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
